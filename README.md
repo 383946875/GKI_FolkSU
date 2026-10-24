@@ -2,13 +2,11 @@
 
 # GKI KernelSU SUSFS
 
-**Automated GKI Kernel Builds | SukiSU / BakaSU / FinaSU + SUSFS Integration**
+**Automated GKI Kernel Builds | FinaSU + SUSFS Integration**
 
-[![Release](https://img.shields.io/github/v/release/LingLuo17/AnyKernel3?label=Release&style=flat-square&logo=github&logoColor=white&color=2ea44f)](https://github.com/LingLuo17/AnyKernel3/releases)
+[![Release](https://img.shields.io/github/v/release/muling0721/GKI_FinaSU?label=Release&style=flat-square&logo=github&logoColor=white&color=2ea44f)](https://github.com/muling0721/GKI_FinaSU/releases)
 [![Coolapk](https://img.shields.io/badge/Follow-Coolapk-3DDC84?style=flat-square&logo=android&logoColor=white)](http://www.coolapk.com/u/38407386)
 [<img src="https://img.shields.io/badge/Join-QQ%20Group-blue?style=flat-square&logo=github&logoColor=white">](https://qm.qq.com/q/PZIFvlcbqU)
-[![SukiSU](https://img.shields.io/badge/SukiSU-Supported-5AA300?style=flat-square)](https://sukisu.org/)
-[![BakaSU](https://img.shields.io/badge/BakaSU-Supported-5AA300?style=flat-square)](https://bakasu.org/)
 [![FinaSU](https://img.shields.io/badge/FinaSU-Supported-5AA300?style=flat-square)](https://github.com/LyraVoid/FinaSU)
 [![SUSFS](https://img.shields.io/badge/SUSFS-Integrated-E67E22?style=flat-square)](https://gitlab.com/simonpunk/susfs4ksu)
 
@@ -38,7 +36,7 @@ Built upon [AnyKernel3](https://github.com/osm0sis/AnyKernel3), this repository 
 
 | Feature | Description |
 |:---|:---|
-| 🔐 KernelSU Variants | Supports SukiSU / BakaSU / FinaSU variants, selectable at build time |
+| 🔐 KernelSU | FinaSU (integrated) |
 | 🙈 SUSFS | Kernel-level hiding working with KSU to complete environment spoofing |
 | 💾 ZRAM LZ4 | ZRAM Compression Algorithm Patch |
 | 🛡️ BBG (Baseband Guard) | BBG patch to protect the baseband partitions from accidental wipe |
@@ -56,7 +54,7 @@ Built upon [AnyKernel3](https://github.com/osm0sis/AnyKernel3), this repository 
 2. Go to the **Actions** page and pick the workflow for your kernel version
 3. Click **Run workflow** and fill in the parameters as needed:
    - `android_version` / `kernel_version` / `sub_level` / `os_patch_level`
-   - `ksu_variant`: KernelSU variant (SukiSU / BakaSU / FinaSU)
+   - `ksu_variant`: KernelSU variant (FinaSU)
    - Feature switches: `enable_susfs`, `use_zram`, `use_bbg`, `use_net_enhance`, `use_kpm`, `skip_incompatible`, etc.
 4. Once the build finishes, download the **Artifacts** from the run page:
    - `AnyKernel3.zip` — flashable zip (recommended; flash via custom Recovery or KSU)
@@ -66,21 +64,21 @@ Built upon [AnyKernel3](https://github.com/osm0sis/AnyKernel3), this repository 
 
 ## 🔧 Custom Commit Configuration
 
-The [`config/config`](config/config) file lets you pin specific commits for SUSFS and SukiSU.
+The [`config/config`](config/config) file lets you pin specific commits for SUSFS.
 
 **What is a commit?**
 
-A commit is a hash string representing the state of a repository at a certain point in time. For example, setting SukiSU to `4b8644515fe6d87a109129e590ccd9d33a855dca` means the kernel will be built with the SukiSU version from January 30.
+A commit is a hash string representing the state of a repository at a certain point in time. For example, setting FinaSU to `9d279c4dab176ce96e05f4f5b75c3d84fc9cd909` means the kernel will be built with the FinaSU version from that commit.
 
 **Why pin a commit?**
 
 - Roll back to a stable version when upstream updates introduce bugs or compatibility issues
-- Manually specify a compatible version when SUSFS and SukiSU are out of sync and the build fails
+- Manually specify a compatible version when SUSFS updates introduce build failures
 
 **How to get a commit hash?**
 
 - SUSFS: [susfs4ksu](https://gitlab.com/simonpunk/susfs4ksu) (GitLab → Repository → Commits)
-- SukiSU: [SukiSU-Ultra](https://github.com/SukiSU-Ultra/SukiSU-Ultra/commits) (GitHub commit history page)
+- FinaSU: [LyraVoid/FinaSU](https://github.com/LyraVoid/FinaSU/commits) (GitHub commit history page)
 
 ## 🛠️ Recommended After Installation
 ### 🔧 Xposed Modules
@@ -92,7 +90,7 @@ A commit is a hash string representing the state of a repository at a certain po
 
 - [osm0sis/AnyKernel3](https://github.com/osm0sis/AnyKernel3)
 - [zzh20188/GKI_KernelSU_SUSFS](https://github.com/zzh20188/GKI_KernelSU_SUSFS) / [WildKernels/GKI_KernelSU_SUSFS](https://github.com/WildKernels/GKI_KernelSU_SUSFS)
-- [SukiSU](https://sukisu.org/) / [BakaSU](https://bakasu.org/) / [FinaSU](https://github.com/LyraVoid/FinaSU)
+- [FinaSU](https://github.com/LyraVoid/FinaSU)
 - [SUSFS](https://gitlab.com/simonpunk/susfs4ksu)
 
 <div align="center">
@@ -125,7 +123,7 @@ A commit is a hash string representing the state of a repository at a certain po
 
 # GKI KernelSU SUSFS
 
-**自动化构建 GKI 内核 | 集成 SukiSU/BakaSU/FinaSU + SUSFS**
+**自动化构建 GKI 内核 | 集成 FinaSU + SUSFS**
 
 [English](#gki-kernelsu-susfs) | **简体中文**
 
@@ -133,7 +131,7 @@ A commit is a hash string representing the state of a repository at a certain po
 
 ## 📖 简介
 
-本仓库基于 [AnyKernel3](https://github.com/osm0sis/AnyKernel3) 构建，通过 GitHub Actions 自动编译 **Android GKI 内核**，集成多种 KernelSU 变体与 SUSFS 内核级隐藏方案并附加 ZRAM、BBG等实用补丁。
+本仓库基于 [AnyKernel3](https://github.com/osm0sis/AnyKernel3) 构建，通过 GitHub Actions 自动编译 **Android GKI 内核**，集成 **FinaSU** 与 SUSFS 内核级隐藏方案并附加 ZRAM、BBG 等实用补丁。
 
 - 构建工作流修改自 [zzh20188/GKI_KernelSU_SUSFS](https://github.com/zzh20188/GKI_KernelSU_SUSFS) 与 [Wild Kernels](https://github.com/WildKernels/GKI_KernelSU_SUSFS)
 - 刷入规则：***只要内核版本匹配即可刷入***
@@ -153,7 +151,7 @@ A commit is a hash string representing the state of a repository at a certain po
 
 | 特性 | 说明 |
 |:---|:---|
-| 🔐 KernelSU 变体 | 支持 SukiSU / BakaSU / FinaSU 变体，构建时按需选择 |
+| 🔐 KernelSU | 已集成 FinaSU |
 | 🙈 SUSFS | 内核级隐藏，配合 KSU 完成环境伪装 |
 | 💾 ZRAM LZ4 | ZRAM 压缩算法补丁 |
 | 🛡️ BBG 基带保护 | BBG（BaseBand Guard）补丁，保护基带分区，防止基带被意外擦除 |
@@ -171,7 +169,7 @@ A commit is a hash string representing the state of a repository at a certain po
 2. 进入 **Actions** 页面，选择对应内核版本的工作流
 3. 点击 **Run workflow**，按需填写参数：
    - `android_version` / `kernel_version` / `sub_level` / `os_patch_level`
-   - `ksu_variant`：KernelSU 变体（SukiSU / BakaSU / FinaSU）
+   - `ksu_variant`：KernelSU 变体（FinaSU）
    - 功能开关：`enable_susfs`、`use_zram`、`use_bbg`、`use_net_enhance`、`use_kpm`、`skip_incompatible` 等 
 4. 构建完成后，在本次运行页面下载 **Artifacts**：
    - `AnyKernel3.zip` —— 卡刷包（推荐，配合自定义 Recovery 或 KSU 刷入）
@@ -181,21 +179,21 @@ A commit is a hash string representing the state of a repository at a certain po
 
 ## 🔧 自定义提交配置
 
-通过 [`config/config`](config/config) 文件可以指定 SUSFS 和 SukiSU 使用特定的 commit。
+通过 [`config/config`](config/config) 文件可以指定 SUSFS 使用特定的 commit。
 
 **什么是提交 (commit)？**
 
-提交是一串哈希字符串，代表仓库在某个时间点的状态。例如将 SukiSU 设为 `4b8644515fe6d87a109129e590ccd9d33a855dca`，即使用 1 月 30 日的 SukiSU 版本编译内核。
+提交是一串哈希字符串，代表仓库在某个时间点的状态。例如将 FinaSU 设为 `9d279c4dab176ce96e05f4f5b75c3d84fc9cd909`，即使用该提交对应的 FinaSU 版本编译内核。
 
 **为什么要指定提交？**
 
 - 当上游仓库更新引入 bug 或兼容性问题时，可回退到稳定版本
-- 当 SUSFS 与 SukiSU 版本不同步导致编译失败时，可手动指定兼容的版本
+- 当 SUSFS 上游更新导致编译失败时，可手动指定兼容的版本
 
 **如何获取提交哈希？**
 
 - SUSFS：[susfs4ksu](https://gitlab.com/simonpunk/susfs4ksu)（GitLab → Repository → Commits）
-- SukiSU：[SukiSU-Ultra](https://github.com/SukiSU-Ultra/SukiSU-Ultra/commits)（GitHub 提交历史页面）
+- FinaSU：[LyraVoid/FinaSU](https://github.com/LyraVoid/FinaSU/commits)（GitHub 提交历史页面）
 
 ## 🛠️ 安装后推荐
 ### 🔧 Xposed 模块
@@ -208,7 +206,7 @@ A commit is a hash string representing the state of a repository at a certain po
 
 - [osm0sis/AnyKernel3](https://github.com/osm0sis/AnyKernel3)
 - [zzh20188/GKI_KernelSU_SUSFS](https://github.com/zzh20188/GKI_KernelSU_SUSFS) / [WildKernels/GKI_KernelSU_SUSFS](https://github.com/WildKernels/GKI_KernelSU_SUSFS)
-- [SukiSU](https://sukisu.org/) / [BakaSU](https://bakasu.org/) / [FinaSU](https://github.com/LyraVoid/FinaSU)
+- [FinaSU](https://github.com/LyraVoid/FinaSU)
 - [SUSFS](https://gitlab.com/simonpunk/susfs4ksu)
 
 <div align="center">
