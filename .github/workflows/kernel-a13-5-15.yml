@@ -12,10 +12,8 @@ on:
         required: true
         type: choice
         options:
-          - SukiSU
-          - BakaSU
           - FinaSU
-        default: BakaSU
+        default: FinaSU
       version:
         description: "自定义版本名 (可选)"
         required: false

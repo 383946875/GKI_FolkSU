@@ -37,10 +37,8 @@ on:
         description: "KernelSU 变体"
         type: choice
         options:
-          - SukiSU
-          - BakaSU
           - FinaSU
-        default: BakaSU
+        default: FinaSU
 
       # ==================== 可选配置 ====================
       version:

@@ -195,10 +195,8 @@ on:
         required: true
         type: choice
         options:
-          - SukiSU
-          - BakaSU
           - FinaSU
-        default: BakaSU
+        default: FinaSU
 
       # ==================== 可选配置 ====================
       version:
